@@ -8,8 +8,12 @@ import {
     Sparkles,
     ShieldCheck,
 } from "lucide-react";
+import { useNavigate } from "react-router-dom"
+
 
 const Hero = () => {
+    const navigate = useNavigate()
+
     return (
         <section className="relative overflow-hidden bg-[#030712] pt-32 pb-20">
             <div className="absolute inset-0 -z-10">
@@ -41,11 +45,11 @@ const Hero = () => {
                     className="absolute right-10 bottom-10 h-72 w-72 rounded-full bg-purple-600/10 blur-[140px]"
                 />
             </div>
- 
+
             <div className="absolute inset-0 -z-20 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:45px_45px]" />
 
             <div className="mx-auto flex max-w-7xl flex-col items-center gap-16 px-6 lg:flex-row">
-                {/* left  */}
+                
                 <motion.div
                     initial={{ opacity: 0, y: 70 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -78,8 +82,9 @@ const Hero = () => {
                                 scale: 1.05,
                                 y: -3,
                             }}
+                            onClick={navigate('/dashboard')}
                             whileTap={{ scale: 0.95 }}
-                            className="flex items-center gap-2 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 px-7 py-4 font-semibold text-white shadow-xl shadow-indigo-600/30"
+                            className="flex items-center cursor-pointer gap-2 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 px-7 py-4 font-semibold text-white shadow-xl shadow-indigo-600/30"
                         >
                             Start for Free
                             <ArrowRight size={18} />
@@ -91,7 +96,7 @@ const Hero = () => {
                                 y: -3,
                             }}
                             whileTap={{ scale: 0.95 }}
-                            className="flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-7 py-4 font-semibold text-white backdrop-blur-xl"
+                            className="flex items-center gap-2 cursor-pointer rounded-xl border border-white/10 bg-white/5 px-7 py-4 font-semibold text-white backdrop-blur-xl"
                         >
                             <Play size={18} />
                             Live Demo
