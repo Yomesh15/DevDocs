@@ -49,7 +49,7 @@ app.get("/", (req, res) => {
 })
 
 
-const PORT = process.env.port || 2005
+const PORT = process.env.PORT || 2005
 app.listen(PORT, () => {
   console.log(`Server : http://localhost:${PORT}`);
 })
