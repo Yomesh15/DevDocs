@@ -1,5 +1,8 @@
 import { initializeApp, cert } from "firebase-admin/app";
-import serviceAccount from "../serviceAccountKey.json" with { type: "json" };
+
+const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
+
+serviceAccount.private_key = serviceAccount.private_key.replace(/\\n/g, "\n");
 
 initializeApp({
   credential: cert(serviceAccount),
