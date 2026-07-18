@@ -12,6 +12,7 @@ import Contact from "./pages/Contact";
 import CreateDoc from "./pages/CreateDoc";
 import Protect from "./protect/Protect";
 import ParticularDocument from "./pages/ParticularDocument";
+import Demo from "./pages/Demo";
 
 
 const App = () => {
@@ -57,6 +58,9 @@ const App = () => {
             <ParticularDocument />
           </Protect>
         } />
+
+        <Route path="/demo" element={<Demo/>}/>
+
       </Routes>
     </>
   );
