@@ -15,7 +15,7 @@ const app = express()
 // Middlewares
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: ["http://localhost:5173","https://dev-docs-three.vercel.app"], 
     credentials: true,
   })
 );
@@ -30,7 +30,6 @@ app.use(express.urlencoded({
 }));
 
 app.use(cookieParser());
-app.use(cookieParser())
 
 
 // routes
